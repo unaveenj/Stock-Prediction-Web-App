@@ -1,5 +1,5 @@
 pystan==2.19.1.1
-fbprophet
+prophet
 pandas
 numpy
 yfinance
