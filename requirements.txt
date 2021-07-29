@@ -1,0 +1,8 @@
+pystan==2.19.1.1
+fbprophet
+pandas
+numpy
+yfinance
+plotly
+matplotlib 
+streamlit
