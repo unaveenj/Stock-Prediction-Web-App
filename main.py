@@ -43,6 +43,7 @@ st.title("Stock predictor")
 st.sidebar.info("Choose US stocks or ETFs")
 selection=['US','ETF']
 main_selection=st.sidebar.selectbox('Select US stock or ETF',selection)
+st.sidebar.text("Credits to : @python-engineer tutorial")
 
 if main_selection=='US':
     df = pd.read_csv("nasdaq_screener_1627469879819.csv")
