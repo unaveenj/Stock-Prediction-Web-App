@@ -1,3 +1,5 @@
+[![Build Status](https://share.streamlit.io/unaveenj/stock-prediction-web-app/main.py)](https://share.streamlit.io/unaveenj/stock-prediction-web-app/main.py)
+
 # Stock Predictor
 > :warning: **This is based on predictions purely based on previous available data and does not gurantee the predicted prices**: Please do your own research before making your decisions!
 
