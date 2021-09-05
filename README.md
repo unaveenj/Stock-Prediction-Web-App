@@ -3,11 +3,11 @@
 
 ## How to use:
 1. Search for stock/etf using ticker symbol
-[image](https://ibb.co/FBBDCTz)
+![image](https://ibb.co/FBBDCTz)
 Note: Find the closest match and search accodingly
-[image](https://ibb.co/7zpDgMC)
+![image](https://ibb.co/7zpDgMC)
 2. Look for the forecast below
-[image](https://ibb.co/T1YkrGf)
+![image](https://ibb.co/T1YkrGf)
 3. You can choose between US stocks and ETFs in the sidebar options
 [image](https://ibb.co/ZHXxpWy)
 
