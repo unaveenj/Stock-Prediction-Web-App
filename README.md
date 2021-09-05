@@ -32,6 +32,8 @@ Note: Find the closest match and search accodingly
 - IND stock support 🚧
 - UK stock support 🚧
 - Candle stick support 🚧
+- Telegram bot support for querying lates prices - by @ssaiganesh  🚧
+
 
 ## Tools used:
  - Dataminer tool used for scraping ticker symbols and crypto symbols as part of the database building [https://dataminer.io/]
