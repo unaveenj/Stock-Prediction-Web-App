@@ -24,9 +24,17 @@ Note: Find the closest match and search accodingly
 - Search based on ticker symbol instead of dropdown menu
 - Find closest matching ticker symbol based on search
 - Supports both US stocks and ETFs
+- Crypto update done
 
 ## Future Updates
-- IND , UK , Crypto stock options will be avaible soon
+- ETFs support ✅
+- Crypto support ✅
+- IND stock support 🚧
+- UK stock support 🚧
+- Candle stick support 🚧
+
+## Tools used:
+ - Dataminer tool used for scraping ticker symbols and crypto symbols as part of the database building [https://dataminer.io/]
 
 ## Credits
 A stock predicition app demo inspired from and credits to : @python-engineer. 
