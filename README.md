@@ -2,7 +2,9 @@
 
 # Stock Predictor
 > :warning: **This is based on predictions purely based on previous available data and does not gurantee the predicted prices**: Please do your own research before making your decisions!
-
+## Authors: 
+- Webapp - ![@unaveenj](https://github.com/unaveenj)
+- Telebot - ![@ssganesh](https://github.com/ssaiganesh)
 ## How to use:
 1. Search for stock/etf using ticker symbol
 
@@ -25,6 +27,7 @@ Note: Find the closest match and search accodingly
 - Find closest matching ticker symbol based on search
 - Supports both US stocks and ETFs
 - Crypto update done
+- Basic Telebot added
 
 ## Future Updates
 - ETFs support ✅
