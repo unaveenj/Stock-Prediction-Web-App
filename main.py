@@ -41,7 +41,7 @@ TODAY_DATE = date.today().strftime('%Y-%m-%d')
 #Title of webapp
 st.title("Stock predictor")
 st.sidebar.info("Choose US stocks or ETFs")
-selection=['US','ETF']
+selection=['US','ETF','Crypto']
 main_selection=st.sidebar.selectbox('Select US stock or ETF',selection)
 st.sidebar.text("Credits to : @python-engineer tutorial")
 
@@ -105,7 +105,70 @@ if main_selection=='US':
         else:
             st.warning(f"Did u mean : {error}")
 
-else:
+
+elif main_selection=='Crypto':
+    df = pd.read_csv("crypto.csv")
+    st.header("Crypto!")
+    stocks = tuple(df['Symbol'])
+    stock_name = tuple(df['Name'])
+    # print(stocks)
+    # select_stocks = st.selectbox("Select stock for prediction",stocks)
+    local_css("style.css")
+    remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+    st.text("Search for stock below")
+    select_stocks = st.text_input("", "").upper()
+    button_clicked = st.button("OK")
+    select_stocks = select_stocks+'-USD'
+    if select_stocks in stocks:
+        selected_name = stock_name[stocks.index(select_stocks)]
+        st.text(f"{selected_name}")
+        period=st.slider("Number of days:", 1,4*365)
+
+
+
+        data_load_state = st.text("Load data...")
+        data = load_stock_data(select_stocks)
+        data_load_state.text("Loading data done !!!")
+        # data['Date'] = data['Date'].dt.strftime('%d-%m-%Y')
+        st.subheader("Statistics")
+        st.write(data)
+
+
+
+        plot_graph()
+
+        # Forecasting
+
+        df_train = data[['Date','Close']]
+        df_train = df_train.rename(columns={"Date":"ds","Close":"y"})
+
+        model=Prophet()
+        model.fit(df_train)
+        predictions = model.make_future_dataframe(periods=period)
+        forecast = model.predict(predictions)
+        # forecast['ds'] = forecast['ds'].dt.strftime('%d-%m-%Y')
+        st.subheader("Forecast Data")
+        st.write(forecast)
+
+        fig1=plot_plotly(model,forecast)
+        st.plotly_chart(fig1)
+
+        st.write("Forecast components")
+        fig2=model.plot_components(forecast)
+        st.write(fig2)
+
+    elif select_stocks=="-USD":
+        st.warning("Please search for your stock")
+    elif select_stocks not in stocks:
+        error = difflib.get_close_matches(select_stocks, stocks)
+
+        if len(error)==0 :
+            st.warning("Stock doesn't exist in database")
+        else:
+            st.warning(f"Did u mean : {error}")
+
+
+elif main_selection=='ETF':
     df = pd.read_csv("etfs.csv")
     st.header("US ETFs!")
     stocks = tuple(df['Symbol'])
