@@ -45,6 +45,12 @@ selection=['US','ETF','Crypto']
 main_selection=st.sidebar.selectbox('Select US stock or ETF',selection)
 st.sidebar.text("Credits to : @python-engineer tutorial")
 
+#Telegram bot
+# st.sidebar.image('https://i.ibb.co/5YBks9z/tele.png', width=200)
+st.sidebar.text("Telegram bot available")
+st.sidebar.markdown('[![this is an image link](https://i.ibb.co/Rp7XGt7/tele-small.jpg)](https://t.me/GaneshTutorial_bot)',unsafe_allow_html=True)
+st.sidebar.text('Authors: \n1. @unaveenj - Web App\n2. @ssganesh- Telegram bot ')
+
 if main_selection=='US':
     df = pd.read_csv("nasdaq_screener_1627469879819.csv")
     st.header("US Stocks!")
@@ -115,7 +121,7 @@ elif main_selection=='Crypto':
     # select_stocks = st.selectbox("Select stock for prediction",stocks)
     local_css("style.css")
     remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
-    st.text("Search for stock below")
+    st.text("Search for crypto below")
     select_stocks = st.text_input("", "").upper()
     button_clicked = st.button("OK")
     select_stocks = select_stocks+'-USD'
@@ -158,12 +164,12 @@ elif main_selection=='Crypto':
         st.write(fig2)
 
     elif select_stocks=="-USD":
-        st.warning("Please search for your stock")
+        st.warning("Please search for your crypto")
     elif select_stocks not in stocks:
         error = difflib.get_close_matches(select_stocks, stocks)
 
         if len(error)==0 :
-            st.warning("Stock doesn't exist in database")
+            st.warning("Crypto doesn't exist in database")
         else:
             st.warning(f"Did u mean : {error}")
 
