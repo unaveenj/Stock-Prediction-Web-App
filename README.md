@@ -25,7 +25,7 @@ Note: Find the closest match and search accodingly
 ## Features
 - Search based on ticker symbol instead of dropdown menu
 - Find closest matching ticker symbol based on search
-- Supports both US stocks and ETFs
+- Supports both US and IND stocks and ETFs
 - Crypto update done
 - Basic Telebot added
 - Candle Stick added
@@ -34,7 +34,7 @@ Note: Find the closest match and search accodingly
 - ETFs support ✅
 - Crypto support ✅
 - Candle stick support ✅
-- IND stock support 🚧
+- IND stock support ✅
 - UK stock support 🚧
 - Telegram bot support for querying lates prices - by @ssaiganesh  🚧
 
