@@ -34,6 +34,29 @@ def plot_graph():
     fig.layout.update(title_text="Time Series Data",xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
 
+def plot_candlestick(data):
+    #Make the dates as index
+    data = data.set_index(pd.DatetimeIndex(data['Date'].values))
+    figure = go.Figure(data=[go.Candlestick(
+        x=data.index,
+        low=data['Low'],
+        high=data['High'],
+        close=data['Close'],
+        open=data['Open'],
+        increasing_line_color='green',
+        decreasing_line_color='red'
+    )])
+    figure.update_layout(
+        yaxis_title='Price',
+        xaxis_title='Date',
+        xaxis_rangeslider_visible=False)
+    # width=900,height=700)
+    st.plotly_chart(figure)
+
+
+
+
+
 
 START_DATE = "2015-01-01"
 TODAY_DATE = date.today().strftime('%Y-%m-%d')
@@ -73,6 +96,9 @@ if main_selection=='US':
         data_load_state = st.text("Load data...")
         data = load_stock_data(select_stocks)
         data_load_state.text("Loading data done !!!")
+        check = st.checkbox('Click here for candlestick chart')
+        if check:
+            plot_candlestick(data)
         # data['Date'] = data['Date'].dt.strftime('%d-%m-%Y')
         st.subheader("Statistics")
         st.write(data)
@@ -135,6 +161,9 @@ elif main_selection=='Crypto':
         data_load_state = st.text("Load data...")
         data = load_stock_data(select_stocks)
         data_load_state.text("Loading data done !!!")
+        check = st.checkbox('Click here for candlestick chart')
+        if check:
+            plot_candlestick(data)
         # data['Date'] = data['Date'].dt.strftime('%d-%m-%Y')
         st.subheader("Statistics")
         st.write(data)
@@ -194,6 +223,9 @@ elif main_selection=='ETF':
         data_load_state = st.text("Load data...")
         data = load_stock_data(select_stocks)
         data_load_state.text("Loading data done !!!")
+        check = st.checkbox('Click here for candlestick chart')
+        if check:
+            plot_candlestick(data)
         # data['Date'] = data['Date'].dt.strftime('%d-%m-%Y')
         st.subheader("Statistics")
         st.write(data)
