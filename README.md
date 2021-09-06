@@ -28,13 +28,14 @@ Note: Find the closest match and search accodingly
 - Supports both US stocks and ETFs
 - Crypto update done
 - Basic Telebot added
+- Candle Stick added
 
 ## Future Updates
 - ETFs support ✅
 - Crypto support ✅
+- Candle stick support ✅
 - IND stock support 🚧
 - UK stock support 🚧
-- Candle stick support 🚧
 - Telegram bot support for querying lates prices - by @ssaiganesh  🚧
 
 
