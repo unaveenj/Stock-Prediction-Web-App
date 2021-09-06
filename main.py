@@ -73,7 +73,7 @@ st.sidebar.text("Credits to : @python-engineer tutorial")
 st.sidebar.text("Telegram bot available")
 st.sidebar.markdown('[![this is an image link](https://i.ibb.co/Rp7XGt7/tele-small.jpg)](https://t.me/GaneshTutorial_bot)',unsafe_allow_html=True)
 st.sidebar.text('Authors: \n1. @unaveenj - Web App\n2. @ssganesh- Telegram bot ')
-
+st.markdown('> :warning: **This is based on predictions purely based on previous available data and does not gurantee the predicted prices**: Please do your own research before making your decisions!')
 if main_selection=='US':
     df = pd.read_csv("nasdaq_screener_1627469879819.csv")
     st.header("US Stocks!")
