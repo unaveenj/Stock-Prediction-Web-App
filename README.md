@@ -36,6 +36,7 @@ Note: Find the closest match and search accodingly
 - Candle stick support ✅
 - IND stock support ✅
 - UK stock support 🚧
+- Alternative search support i.e. search based on stock name as well 🚧
 - Telegram bot support for querying lates prices - by @ssaiganesh  🚧
 
 
